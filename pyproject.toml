@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scientific-chart-verifier"
+version = "0.1.0"
+description = "Evidence-Grounded Zero Ground-Truth Visual Lie Detector for Multimodal VLMs in Scientific Charts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Research Team" }
+]
+dependencies = [
+    "pandas",
+    "matplotlib",
+    "numpy",
+    "opencv-python",
+    "pillow",
+    "pytesseract",
+    "requests",
+    "pytest",
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v"

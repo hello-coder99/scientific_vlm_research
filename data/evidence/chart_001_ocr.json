@@ -1,0 +1,174 @@
+{
+    "image_width": 1049,
+    "image_height": 701,
+    "words": [
+        {
+            "text": "Accuracy",
+            "confidence": 93.0,
+            "x": 14,
+            "y": 310,
+            "width": 20,
+            "height": 95
+        },
+        {
+            "text": "(%)",
+            "confidence": 89.0,
+            "x": 14,
+            "y": 268,
+            "width": 19,
+            "height": 34
+        },
+        {
+            "text": "87.5",
+            "confidence": 96.0,
+            "x": 45,
+            "y": 111,
+            "width": 43,
+            "height": 16
+        },
+        {
+            "text": "85.0",
+            "confidence": 96.0,
+            "x": 45,
+            "y": 188,
+            "width": 43,
+            "height": 16
+        },
+        {
+            "text": "82.5",
+            "confidence": 95.0,
+            "x": 45,
+            "y": 265,
+            "width": 43,
+            "height": 16
+        },
+        {
+            "text": "775",
+            "confidence": 88.0,
+            "x": 45,
+            "y": 420,
+            "width": 43,
+            "height": 16
+        },
+        {
+            "text": "75.0",
+            "confidence": 96.0,
+            "x": 45,
+            "y": 497,
+            "width": 43,
+            "height": 16
+        },
+        {
+            "text": "Model",
+            "confidence": 96.0,
+            "x": 379,
+            "y": 15,
+            "width": 71,
+            "height": 19
+        },
+        {
+            "text": "Accuracy",
+            "confidence": 96.0,
+            "x": 460,
+            "y": 16,
+            "width": 114,
+            "height": 23
+        },
+        {
+            "text": "Across",
+            "confidence": 93.0,
+            "x": 582,
+            "y": 16,
+            "width": 81,
+            "height": 18
+        },
+        {
+            "text": "Epochs",
+            "confidence": 91.0,
+            "x": 674,
+            "y": 15,
+            "width": 87,
+            "height": 24
+        },
+        {
+            "text": "1.0",
+            "confidence": 94.0,
+            "x": 132,
+            "y": 639,
+            "width": 29,
+            "height": 16
+        },
+        {
+            "text": "15",
+            "confidence": 82.0,
+            "x": 238,
+            "y": 639,
+            "width": 29,
+            "height": 16
+        },
+        {
+            "text": "2.0",
+            "confidence": 96.0,
+            "x": 343,
+            "y": 639,
+            "width": 30,
+            "height": 16
+        },
+        {
+            "text": "2.5",
+            "confidence": 94.0,
+            "x": 449,
+            "y": 639,
+            "width": 30,
+            "height": 16
+        },
+        {
+            "text": "3.0",
+            "confidence": 96.0,
+            "x": 554,
+            "y": 639,
+            "width": 30,
+            "height": 16
+        },
+        {
+            "text": "3.5",
+            "confidence": 95.0,
+            "x": 660,
+            "y": 639,
+            "width": 30,
+            "height": 16
+        },
+        {
+            "text": "4.0",
+            "confidence": 96.0,
+            "x": 765,
+            "y": 639,
+            "width": 31,
+            "height": 16
+        },
+        {
+            "text": "Epoch",
+            "confidence": 96.0,
+            "x": 539,
+            "y": 667,
+            "width": 60,
+            "height": 20
+        },
+        {
+            "text": "4.5",
+            "confidence": 94.0,
+            "x": 871,
+            "y": 639,
+            "width": 31,
+            "height": 16
+        },
+        {
+            "text": "5.0",
+            "confidence": 95.0,
+            "x": 977,
+            "y": 639,
+            "width": 30,
+            "height": 16
+        }
+    ]
+}

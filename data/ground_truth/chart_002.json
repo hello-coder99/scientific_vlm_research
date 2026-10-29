@@ -1,0 +1,52 @@
+{
+    "chart_id": "chart_002",
+    "chart_type": "line",
+    "title": "Training Loss Over Iterations",
+    "x_axis": {
+        "label": "Iteration",
+        "values": [
+            10,
+            20,
+            30,
+            40,
+            50
+        ]
+    },
+    "y_axis": {
+        "label": "Loss",
+        "values": [
+            1.45,
+            0.95,
+            0.62,
+            0.38,
+            0.22
+        ]
+    },
+    "series": [
+        {
+            "name": "Loss",
+            "points": [
+                {
+                    "x": 10,
+                    "y": 1.45
+                },
+                {
+                    "x": 20,
+                    "y": 0.95
+                },
+                {
+                    "x": 30,
+                    "y": 0.62
+                },
+                {
+                    "x": 40,
+                    "y": 0.38
+                },
+                {
+                    "x": 50,
+                    "y": 0.22
+                }
+            ]
+        }
+    ]
+}

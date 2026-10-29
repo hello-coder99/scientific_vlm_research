@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Chart Verifier | Zero Ground-Truth VLM Lie Detector</title>
+    <meta name="description" content="Autonomous zero ground-truth visual lie detector and evidence-grounded verification engine for auditing hallucinations in Vision-Language Models on scientific charts.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="app-header" id="appHeader">
+        <div class="header-container">
+            <div class="brand-group">
+                <div class="brand-icon">🔬</div>
+                <div class="brand-text">
+                    <span class="brand-title">Scientific Chart Verifier</span>
+                    <span class="brand-subtitle">Zero Ground-Truth VLM Lie Detector</span>
+                </div>
+            </div>
+
+            <nav class="nav-tabs" id="navTabs" role="tablist">
+                <button class="nav-tab active" id="tabVerifierBtn" data-tab="tab-verifier" role="tab" aria-selected="true">
+                    <span class="tab-icon">⚡</span> Interactive Verifier
+                </button>
+                <button class="nav-tab" id="tabBenchmarkBtn" data-tab="tab-benchmark" role="tab" aria-selected="false">
+                    <span class="tab-icon">📊</span> VLM Benchmark Fleet
+                </button>
+                <button class="nav-tab" id="tabTaxonomyBtn" data-tab="tab-taxonomy" role="tab" aria-selected="false">
+                    <span class="tab-icon">📐</span> Engine Physics & Taxonomy
+                </button>
+            </nav>
+
+            <div class="header-badges">
+                <div class="status-pill online">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">Engine Ready</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- TAB 1: INTERACTIVE VERIFIER -->
+        <section class="tab-pane active" id="tab-verifier" role="tabpanel">
+            <!-- Quick Benchmark Selector Carousel -->
+            <div class="benchmark-selector-card glass-panel" id="benchmarkSelectorCard">
+                <div class="card-header-compact">
+                    <div class="section-tag">PRE-LOADED RESEARCH SCENARIOS</div>
+                    <span class="selector-hint">Select a benchmark scenario to immediately inspect injected VLM hallucinations:</span>
+                </div>
+                <div class="scenario-chips-grid" id="scenarioChipsContainer">
+                    <!-- Populated dynamically via JS -->
+                    <div class="loading-shimmer-chip">Loading benchmark scenarios...</div>
+                </div>
+            </div>
+
+            <!-- Main Verification Studio Grid -->
+            <div class="studio-grid">
+                <!-- Left Input Panel -->
+                <div class="studio-col input-col">
+                    <div class="panel-card glass-panel" id="inputPanel">
+                        <div class="panel-header">
+                            <div class="panel-title-group">
+                                <span class="panel-icon">📁</span>
+                                <h2>Input Chart & Claims</h2>
+                            </div>
+                            <span class="badge badge-accent" id="chartSourceBadge">Benchmark: chart_001</span>
+                        </div>
+
+                        <!-- Dropzone Image Upload -->
+                        <div class="form-group">
+                            <label class="form-label" for="chartImageFileInput">
+                                <span>Chart Image Canvas</span>
+                                <span class="label-subtext">PNG, JPG, or WEBP</span>
+                            </label>
+                            
+                            <div class="dropzone" id="dropzoneContainer">
+                                <input type="file" id="chartImageFileInput" accept="image/png, image/jpeg, image/webp" class="file-input-hidden">
+                                
+                                <div class="dropzone-empty" id="dropzoneEmpty">
+                                    <div class="drop-icon">🖼️</div>
+                                    <div class="drop-prompt">
+                                        <strong>Drag & drop chart image</strong> or <span>browse files</span>
+                                    </div>
+                                    <div class="drop-sub">Higher resolution (≥600×400) gives highest OCR calibration precision</div>
+                                </div>
+
+                                <div class="dropzone-preview hidden" id="dropzonePreview">
+                                    <img id="previewImageTag" src="" alt="Selected Chart Preview">
+                                    <div class="preview-overlay-bar">
+                                        <span id="previewFilename">chart_001.png</span>
+                                        <button type="button" class="btn-icon" id="clearImageBtn" title="Clear Image">✕</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tolerance Slider Control -->
+                        <div class="form-group">
+                            <div class="slider-header">
+                                <label class="form-label" for="toleranceSlider">
+                                    <span>Numerical Discrepancy Tolerance (τ)</span>
+                                </label>
+                                <span class="tolerance-badge" id="toleranceValBadge">3.0% Axis Span</span>
+                            </div>
+                            <div class="slider-row">
+                                <input type="range" id="toleranceSlider" min="0.5" max="15.0" step="0.1" value="3.0" class="custom-slider">
+                            </div>
+                            <div class="slider-ticks-labels">
+                                <span>0.5% (Strict)</span>
+                                <span>3.0% (Standard)</span>
+                                <span>15.0% (Relaxed)</span>
+                            </div>
+                        </div>
+
+                        <!-- Live LLM Extraction Toolbar (.env Live API Integration) -->
+                        <div class="live-llm-toolbar glass-panel" id="liveLlmToolbar">
+                            <div class="toolbar-header-row">
+                                <div class="toolbar-title-group">
+                                    <span class="toolbar-icon">⚡</span>
+                                    <span class="toolbar-title">Live LLM Extractor (.env)</span>
+                                </div>
+                                <span class="toolbar-badge">Active Keys Loaded</span>
+                            </div>
+                            <div class="toolbar-controls-row">
+                                <select id="liveModelSelect" class="custom-select" title="Choose VLM for live extraction">
+                                    <option value="gemini" selected>Google Gemini 2.5 Flash (GEMINI_API_KEY)</option>
+                                    <option value="grok">xAI Grok 2 Vision (XAI_API_KEY)</option>
+                                    <option value="anthropic">Anthropic Claude 3.5 Sonnet (ANTHROPIC_API_KEY)</option>
+                                    <option value="openai">OpenAI GPT-4o-mini (OPENAI_API_KEY)</option>
+                                    <option value="simulated">Synthetic Baseline (Offline Simulation)</option>
+                                </select>
+                                <button type="button" class="btn-extract-vlm" id="extractVlmBtn">
+                                    <span class="btn-text">Extract via LLM ✨</span>
+                                    <div class="spinner hidden" id="extractSpinner"></div>
+                                </button>
+                            </div>
+                            <div class="llm-status-bar hidden" id="llmExtractionStatus">
+                                <span class="status-mode-badge" id="extractionModeBadge">GENUINE</span>
+                                <span class="status-note-text" id="extractionNoteText">Extraction succeeded</span>
+                            </div>
+                        </div>
+
+                        <!-- Claimed VLM Prediction JSON Editor -->
+                        <div class="form-group">
+                            <div class="editor-header">
+                                <label class="form-label" for="predictionJsonEditor">
+                                    <span>Claimed VLM Prediction JSON</span>
+                                </label>
+                                <div class="editor-actions">
+                                    <button type="button" class="btn-ghost-sm" id="formatJsonBtn" title="Format & Validate JSON">✨ Beautify</button>
+                                    <button type="button" class="btn-ghost-sm" id="resetJsonBtn" title="Reset to Sample">↺ Reset</button>
+                                </div>
+                            </div>
+                            <textarea id="predictionJsonEditor" class="code-textarea" rows="12" spellcheck="false" placeholder="Paste VLM extracted JSON here..."></textarea>
+                            <div class="editor-footer-status" id="jsonStatusLine">
+                                <span class="status-indicator valid"></span>
+                                <span id="jsonStatusText">Valid JSON schema</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button type="button" class="btn-primary-glow" id="runVerificationBtn">
+                            <span class="btn-text">Audit Claims & Verify Evidence ⚡</span>
+                            <div class="spinner hidden" id="runSpinner"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Diagnostic HUD Panel -->
+                <div class="studio-col output-col">
+                    <!-- Empty State Placeholder -->
+                    <div class="panel-card glass-panel empty-state" id="emptyResultsState">
+                        <div class="empty-icon-halo">
+                            <span class="empty-icon">🛡️</span>
+                        </div>
+                        <h3>Zero Ground-Truth Lie Detector Ready</h3>
+                        <p>Click <strong>"Audit Claims & Verify Evidence ⚡"</strong> to automatically calibrate axes (R² ≥ 0.99), probe physical image pixels, trap VLM hallucinations, and generate interactive visual proof cards.</p>
+                        <div class="empty-quick-action">
+                            <button class="btn-outline" id="quickTestRunBtn">Run Benchmark Scenario 1 Demo →</button>
+                        </div>
+                    </div>
+
+                    <!-- Populated Results Container -->
+                    <div class="results-wrapper hidden" id="resultsWrapper">
+                        <!-- Scoreboard HUD Banner -->
+                        <div class="hud-banner-card glass-panel" id="hudBannerCard">
+                            <div class="hud-score-col">
+                                <div class="grounding-ring-container">
+                                    <div class="score-number" id="hudGroundingScore">81.7%</div>
+                                    <div class="score-label">Grounding Score</div>
+                                </div>
+                            </div>
+                            <div class="hud-counters-col">
+                                <div class="hud-pill pill-supported" id="pillSupported">
+                                    <span class="pill-badge">✓</span>
+                                    <span class="pill-count" id="countSupported">4</span>
+                                    <span class="pill-name">Supported</span>
+                                </div>
+                                <div class="hud-pill pill-contradicted" id="pillContradicted">
+                                    <span class="pill-badge">✕</span>
+                                    <span class="pill-count" id="countContradicted">1</span>
+                                    <span class="pill-name">Numerical Drift</span>
+                                </div>
+                                <div class="hud-pill pill-fabricated" id="pillFabricated">
+                                    <span class="pill-badge">▢</span>
+                                    <span class="pill-count" id="countFabricated">0</span>
+                                    <span class="pill-name">Fabricated</span>
+                                </div>
+                                <div class="hud-pill pill-omitted" id="pillOmitted">
+                                    <span class="pill-badge">◇</span>
+                                    <span class="pill-count" id="countOmitted">0</span>
+                                    <span class="pill-name">Omitted</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Image Viewer with Interactive Overlay Toggle -->
+                        <div class="panel-card glass-panel" id="overlayViewerCard">
+                            <div class="panel-header">
+                                <div class="panel-title-group">
+                                    <span class="panel-icon">🖼️</span>
+                                    <h2>Visual Diagnostic Overlay</h2>
+                                </div>
+                                <div class="viewer-toggles">
+                                    <button type="button" class="toggle-btn active" id="viewOverlayBtn" data-view="overlay">Annotated Overlay</button>
+                                    <button type="button" class="toggle-btn" id="viewOriginalBtn" data-view="original">Original Canvas</button>
+                                </div>
+                            </div>
+
+                            <div class="image-viewer-stage" id="imageViewerStage">
+                                <img id="displayMainImg" src="" alt="Chart Overlay View" class="main-display-image">
+                                <div class="viewer-legend-bar">
+                                    <span class="legend-item"><span class="legend-color green"></span> 🟢 Confirmed Mark</span>
+                                    <span class="legend-item"><span class="legend-color red"></span> 🔴 Numerical Discrepancy (Δ)</span>
+                                    <span class="legend-item"><span class="legend-color magenta"></span> 🟣 Fabricated Mark</span>
+                                    <span class="legend-item"><span class="legend-color cyan"></span> 🔵 Omitted Mark</span>
+                                </div>
+                            </div>
+
+                            <!-- Export Bar -->
+                            <div class="viewer-actions-bar">
+                                <a id="viewHtmlCertLink" href="#" target="_blank" class="btn-outline-sm">
+                                    <span>📜 Open Full HTML Certificate</span>
+                                </a>
+                                <button type="button" class="btn-outline-sm" id="downloadOverlayBtn">
+                                    <span>⬇ Download Verified PNG</span>
+                                </button>
+                                <button type="button" class="btn-outline-sm" id="exportJsonReportBtn">
+                                    <span>📦 Export JSON Verdict</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- High-Resolution ROI Proof Cards Grid -->
+                        <div class="panel-card glass-panel" id="proofCardsSection">
+                            <div class="panel-header">
+                                <div class="panel-title-group">
+                                    <span class="panel-icon">🎯</span>
+                                    <h2>Point-by-Point Visual Proof Cards</h2>
+                                </div>
+                                <span class="badge" id="totalPointsBadge">5 Claims Audited</span>
+                            </div>
+                            <div class="proof-cards-grid" id="proofCardsGrid">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Semantic Text Grounding Audit Table -->
+                        <div class="panel-card glass-panel" id="textAuditSection">
+                            <div class="panel-header">
+                                <div class="panel-title-group">
+                                    <span class="panel-icon">🔤</span>
+                                    <h2>Semantic Text Grounding Audit</h2>
+                                </div>
+                                <span class="badge badge-accent" id="textGroundingRateBadge">Text Grounding</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="custom-table" id="textAuditTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Field</th>
+                                            <th>Claimed Text</th>
+                                            <th>Observed OCR Token</th>
+                                            <th>Similarity</th>
+                                            <th>Verdict</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="textAuditTbody">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Calibration Diagnostics Card -->
+                        <div class="panel-card glass-panel" id="calibrationDiagCard">
+                            <div class="panel-header">
+                                <div class="panel-title-group">
+                                    <span class="panel-icon">📐</span>
+                                    <h2>Affine Axis Calibration Physics</h2>
+                                </div>
+                                <span class="badge badge-green" id="calibStatusBadge">R² ≥ 0.99 Consensual Fit</span>
+                            </div>
+                            <div class="calib-metrics-grid" id="calibMetricsGrid">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: VLM BENCHMARK FLEET -->
+        <section class="tab-pane" id="tab-benchmark" role="tabpanel">
+            <div class="benchmark-hero-card glass-panel">
+                <div class="hero-content">
+                    <h2>Comparative VLM Hallucination Benchmark</h2>
+                    <p>Evaluates Vision-Language Models across diverse scientific chart topologies (line plots, exponential decay, negative temperatures, biochemical kinetics, bandpass filters) using the Model Reliability Index (MRI).</p>
+                    <div class="benchmark-info-bar">
+                        <span class="info-tag">Live API vs. Fallback Monitoring</span>
+                        <p class="info-desc">Integrates <code>Google Gemini 2.5 Flash</code>, <code>xAI Grok 2 Vision</code>, <code>Anthropic Claude 3.5 Sonnet</code>, and <code>OpenAI GPT-4o-mini</code> via <code>.env</code> keys. If an API is unavailable or quota-limited, the system transparently falls back to simulated baselines, explicitly labeling each model's origin as <strong>GENUINE</strong> or <strong>SIMULATED</strong>.</p>
+                    </div>
+                    <button type="button" class="btn-primary-glow" id="runFleetBenchmarkBtn">
+                        <span class="btn-text">Execute Fleet Benchmark Live 🚀</span>
+                        <div class="spinner hidden" id="fleetSpinner"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="panel-card glass-panel" id="benchmarkResultsPanel">
+                <div class="panel-header">
+                    <div class="panel-title-group">
+                        <span class="panel-icon">🏆</span>
+                        <h2>Fleet Leaderboard & Hallucination Metrics</h2>
+                    </div>
+                    <div class="table-legend-pills">
+                        <span class="badge badge-green">🟢 GENUINE (Live API)</span>
+                        <span class="badge badge-purple">🟣 SIMULATED / RANDOM (Fallback)</span>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="custom-table" id="benchmarkLeaderboardTable">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Vision-Language Model</th>
+                                <th>Origin / Mode</th>
+                                <th>Audited Points</th>
+                                <th>Support Rate</th>
+                                <th>Hallucination Rate</th>
+                                <th>Fabrications</th>
+                                <th>Omissions</th>
+                                <th>Model Reliability Index (MRI)</th>
+                                <th>Diagnostics Note</th>
+                            </tr>
+                        </thead>
+                        <tbody id="benchmarkTbody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: ENGINE PHYSICS & TAXONOMY -->
+        <section class="tab-pane" id="tab-taxonomy" role="tabpanel">
+            <div class="taxonomy-grid">
+                <div class="panel-card glass-panel">
+                    <div class="panel-header">
+                        <div class="panel-title-group">
+                            <span class="panel-icon">🎨</span>
+                            <h2>Diagnostic Hallucination Taxonomy</h2>
+                        </div>
+                    </div>
+                    <div class="taxonomy-cards">
+                        <div class="tax-card tax-supported">
+                            <div class="tax-header">
+                                <span class="tax-pill green">SUPPORTED</span>
+                                <span class="tax-sym">🟢 Concentric Target</span>
+                            </div>
+                            <p>Claimed coordinate matches a physical visual mark on the chart canvas within 3% tolerance. Ground truth verified directly from raw pixels.</p>
+                        </div>
+
+                        <div class="tax-card tax-contradicted">
+                            <div class="tax-header">
+                                <span class="tax-pill red">VALUE_CONTRADICTED</span>
+                                <span class="tax-sym">🔴 Crosshair & Error Vector</span>
+                            </div>
+                            <p>A physical visual mark exists at X, but the claimed Y value deviates beyond tolerance. Red vector arrow draws the exact distance to the true physical marker.</p>
+                        </div>
+
+                        <div class="tax-card tax-fabricated">
+                            <div class="tax-header">
+                                <span class="tax-pill magenta">FABRICATED_POINT</span>
+                                <span class="tax-sym">🟣 Dashed Frame</span>
+                            </div>
+                            <p>The VLM invented a non-existent intermediate data point where zero physical visual marker evidence exists on the image canvas.</p>
+                        </div>
+
+                        <div class="tax-card tax-omitted">
+                            <div class="tax-header">
+                                <span class="tax-pill cyan">OMITTED_POINT</span>
+                                <span class="tax-sym">🔵 Cyan Diamond</span>
+                            </div>
+                            <p>A verified physical visual mark exists on the chart canvas that the VLM missed or failed to report in its structured extraction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card glass-panel">
+                    <div class="panel-header">
+                        <div class="panel-title-group">
+                            <span class="panel-icon">🧮</span>
+                            <h2>Affine Coordinate Calibration Physics</h2>
+                        </div>
+                    </div>
+                    <div class="math-explainer">
+                        <!-- Section 1: Consensus RANSAC Linear Fit -->
+                        <div class="math-block">
+                            <div class="math-block-header">
+                                <h4>Consensus RANSAC Linear Fit</h4>
+                                <span class="badge badge-green">R² ≥ 0.99 Consensual Inliers</span>
+                            </div>
+                            <p class="math-desc">Reconstructs the continuous affine mapping between image pixel coordinates (p<sub>x</sub>, p<sub>y</sub>) and true physical data coordinates (x, y):</p>
+
+                            <div class="math-equations-list">
+                                <div class="equation-card">
+                                    <div class="eq-label">X-Axis Coordinate Mapping</div>
+                                    <div class="eq-formula">
+                                        <span class="var">x</span><sub class="sub">data</sub>
+                                        <span class="op">=</span>
+                                        <span class="var">m</span><sub class="sub">x</sub>
+                                        <span class="dot">·</span>
+                                        <span class="var">p</span><sub class="sub">x</sub>
+                                        <span class="op">+</span>
+                                        <span class="var">c</span><sub class="sub">x</sub>
+                                    </div>
+                                    <div class="eq-constraint green">
+                                        <span class="constraint-icon">✓</span>
+                                        <span>Physical Constraint: <strong>m<sub>x</sub> &gt; 0</strong> (pixel coordinates increase left-to-right)</span>
+                                    </div>
+                                </div>
+
+                                <div class="equation-card">
+                                    <div class="eq-label">Y-Axis Coordinate Mapping</div>
+                                    <div class="eq-formula">
+                                        <span class="var">y</span><sub class="sub">data</sub>
+                                        <span class="op">=</span>
+                                        <span class="var">m</span><sub class="sub">y</sub>
+                                        <span class="dot">·</span>
+                                        <span class="var">p</span><sub class="sub">y</sub>
+                                        <span class="op">+</span>
+                                        <span class="var">c</span><sub class="sub">y</sub>
+                                    </div>
+                                    <div class="eq-constraint red">
+                                        <span class="constraint-icon">✓</span>
+                                        <span>Physical Constraint: <strong>m<sub>y</sub> &lt; 0</strong> (top-to-bottom pixel canvas inversion)</span>
+                                    </div>
+                                </div>
+
+                                <div class="equation-card">
+                                    <div class="eq-label">Bidirectional Inversion (Data Space → Pixel Coordinates)</div>
+                                    <div class="eq-formula">
+                                        <span class="var">p</span><sub class="sub">x</sub>
+                                        <span class="op">=</span>
+                                        <div class="fraction">
+                                            <span class="numerator"><span class="var">x</span><sub class="sub">data</sub> <span class="op">−</span> <span class="var">c</span><sub class="sub">x</sub></span>
+                                            <span class="denominator"><span class="var">m</span><sub class="sub">x</sub></span>
+                                        </div>
+                                        <span class="eq-separator">,</span>
+                                        <span class="var">p</span><sub class="sub">y</sub>
+                                        <span class="op">=</span>
+                                        <div class="fraction">
+                                            <span class="numerator"><span class="var">y</span><sub class="sub">data</sub> <span class="op">−</span> <span class="var">c</span><sub class="sub">y</sub></span>
+                                            <span class="denominator"><span class="var">m</span><sub class="sub">y</sub></span>
+                                        </div>
+                                    </div>
+                                    <div class="eq-constraint blue">
+                                        <span class="constraint-icon">ℹ</span>
+                                        <span>Exact Invertibility: |pixel_to_data(data_to_pixel(x, y)) − (x, y)| &lt; 10<sup>−4</sup></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Model Reliability Index (MRI) -->
+                        <div class="math-block">
+                            <div class="math-block-header">
+                                <h4>Model Reliability Index (MRI)</h4>
+                                <span class="badge badge-accent">Unified 0 – 100 Score</span>
+                            </div>
+                            <p class="math-desc">A unified dependability metric measuring real-world quantitative extraction trustworthiness:</p>
+
+                            <div class="equation-card mri-card">
+                                <div class="eq-formula mri-formula">
+                                    <span class="mri-title">MRI</span>
+                                    <span class="op">=</span>
+                                    <span class="bracket">[</span>
+                                    <span class="term term-support">0.70 <span class="dot">×</span> SupportRate</span>
+                                    <span class="op">+</span>
+                                    <span class="term term-text">0.30 <span class="dot">×</span> TextScore</span>
+                                    <span class="op">−</span>
+                                    <span class="term term-penalty">0.40 <span class="dot">×</span> HallucinationRate</span>
+                                    <span class="bracket">]</span>
+                                    <span class="dot">×</span>
+                                    <span class="constant">100</span>
+                                </div>
+                            </div>
+
+                            <div class="mri-weights-breakdown">
+                                <div class="weight-chip chip-green">
+                                    <strong>+70% Visual Support</strong>
+                                    <span>Reward for points confirmed by physical markers within 3% tolerance</span>
+                                </div>
+                                <div class="weight-chip chip-cyan">
+                                    <strong>+30% Semantic Grounding</strong>
+                                    <span>Title & axis label match via SequenceMatcher + Jaccard token overlap</span>
+                                </div>
+                                <div class="weight-chip chip-red">
+                                    <strong>−40% Hallucination Penalty</strong>
+                                    <span>Heavy penalty for numerical value drift, sign flips, and fabricated points</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <span>Evidence-Grounded Scientific Chart Verifier • Zero Ground-Truth VLM Lie Detector</span>
+            <span>FastAPI Backend • Vanilla HTML/CSS/JS Frontend</span>
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

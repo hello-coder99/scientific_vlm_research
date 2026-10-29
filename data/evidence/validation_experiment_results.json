@@ -1,0 +1,772 @@
+{
+    "metrics": {
+        "total_samples": 75,
+        "true_positives": 46,
+        "true_negatives": 25,
+        "false_positives": 0,
+        "false_negatives": 4,
+        "precision": 1.0,
+        "recall": 0.92,
+        "f1_score": 0.9583333333333334,
+        "specificity": 1.0,
+        "accuracy": 0.9466666666666667
+    },
+    "category_detection_rates": {
+        "Drift": 0.7857142857142857,
+        "Extreme": 1.0,
+        "Sign": 1.0,
+        "Fabricated": 0.9230769230769231
+    },
+    "samples": [
+        {
+            "chart_id": "chart_003",
+            "x": 2018,
+            "claimed_y": 1.5,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2018,
+            "claimed_y": 0.6,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.012019596395389187,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2018.5,
+            "claimed_y": 0.2,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2019,
+            "claimed_y": 0.9,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.010749154097615121,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2020,
+            "claimed_y": 1.96,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2020,
+            "claimed_y": 1.3,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.016155261307303936,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2024.0,
+            "claimed_y": 0.9,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2017,
+            "claimed_y": 1.2,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 1.0122872451716527,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2016,
+            "claimed_y": 0.4,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Sign",
+            "discrepancy": 0.8090665539772274,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2016,
+            "claimed_y": -0.4,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.009066553977227332,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2017,
+            "claimed_y": 0.2,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.01228724517165275,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_003",
+            "x": 2017,
+            "claimed_y": -0.2,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Sign",
+            "discrepancy": 0.3877127548283473,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 50,
+            "claimed_y": 0.87,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 0.6504451343156848,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 40,
+            "claimed_y": -0.38,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 50,
+            "claimed_y": 0.14,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Drift",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 10,
+            "claimed_y": -1.45,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 50,
+            "claimed_y": 0.22,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.00044513431568485307,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 20,
+            "claimed_y": 0.95,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.002276875801845102,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 40,
+            "claimed_y": 0.38,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.00395258516110808,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 51.5,
+            "claimed_y": 0.22,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 30,
+            "claimed_y": 0.55,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Drift",
+            "discrepancy": 0.06747954844609172,
+            "correct": false
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 35.0,
+            "claimed_y": 0.62,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 10,
+            "claimed_y": 1.45,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.0029864780883184228,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 15.0,
+            "claimed_y": 1.45,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 10,
+            "claimed_y": 1.35,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Drift",
+            "discrepancy": 0.09701352191168144,
+            "correct": false
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 40,
+            "claimed_y": 0.3,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Drift",
+            "discrepancy": 0.07604741483889194,
+            "correct": false
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 20,
+            "claimed_y": 1.05,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 0.10227687580184519,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_002",
+            "x": 30,
+            "claimed_y": 0.62,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.0025204515539082317,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 30,
+            "claimed_y": 3.49,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Drift",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 30,
+            "claimed_y": 0.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.08519010874910604,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 10,
+            "claimed_y": 24.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 40,
+            "claimed_y": -12.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.01668248820481999,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 10,
+            "claimed_y": -24.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.0034000385394215016,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 50,
+            "claimed_y": -24.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.008703906939132366,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 20,
+            "claimed_y": -8.52,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 3.485464571854994,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 20.5,
+            "claimed_y": -12.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Fabricated",
+            "discrepancy": 0.005464571854993494,
+            "correct": false
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 50,
+            "claimed_y": 24.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 50,
+            "claimed_y": -33.37,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 50,
+            "claimed_y": -22.18,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 1.8287039069391327,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_005",
+            "x": 20,
+            "claimed_y": -12.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.005464571854993494,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 3,
+            "claimed_y": 81,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.04738611007549309,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 5,
+            "claimed_y": 89,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.05387528495157312,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 3,
+            "claimed_y": -81,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 5,
+            "claimed_y": -89,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 1.5,
+            "claimed_y": 72,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 9.0,
+            "claimed_y": 85,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 5,
+            "claimed_y": 87.88,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 1.0661247150484314,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 1,
+            "claimed_y": 62.25,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 2,
+            "claimed_y": 82.31,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 6.345237366055628,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 1,
+            "claimed_y": 72,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.04993038105993719,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 1,
+            "claimed_y": -72,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 5,
+            "claimed_y": 94.45,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 4,
+            "claimed_y": 85,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.029887949814394688,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 2,
+            "claimed_y": 76,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.03523736605562533,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 4,
+            "claimed_y": 75.59,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 9.380112050185602,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 3,
+            "claimed_y": 79.45,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 1.502613889924504,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 2.5,
+            "claimed_y": 76,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 3,
+            "claimed_y": 89.24,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 8.287386110075488,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_001",
+            "x": 4,
+            "claimed_y": 83.7,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 1.2701120501856025,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 12.5,
+            "claimed_y": 53.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 10,
+            "claimed_y": 53.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.05600715062995221,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 13.0,
+            "claimed_y": 48.2,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 4,
+            "claimed_y": 31.5,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.027519717953754963,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 4,
+            "claimed_y": 34.77,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 3.297519717953758,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 2,
+            "claimed_y": -2.04,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Extreme",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 6,
+            "claimed_y": 41.0,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.04374666156170548,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 6,
+            "claimed_y": 24.5,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Extreme",
+            "discrepancy": 16.456253338438295,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 2,
+            "claimed_y": 14.81,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Drift",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 8.5,
+            "claimed_y": 41.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 2.5,
+            "claimed_y": 18.2,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "FABRICATED_POINT",
+            "category": "Fabricated",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 2,
+            "claimed_y": 18.2,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.032411555218875066,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 6,
+            "claimed_y": -41.0,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 4,
+            "claimed_y": -31.5,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "OUT_OF_BOUNDS",
+            "category": "Sign",
+            "discrepancy": null,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 8,
+            "claimed_y": 48.2,
+            "ground_truth_label": "CLEAN",
+            "verifier_verdict": "SUPPORTED",
+            "category": "Clean_Veridical",
+            "discrepancy": 0.02319724331747608,
+            "correct": true
+        },
+        {
+            "chart_id": "chart_004",
+            "x": 10,
+            "claimed_y": 50.67,
+            "ground_truth_label": "HALLUCINATION",
+            "verifier_verdict": "VALUE_CONTRADICTED",
+            "category": "Drift",
+            "discrepancy": 2.273992849370046,
+            "correct": true
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "chart_id": "chart_005",
+    "title": "Bandpass Filter Response",
+    "x_axis": "Frequency (kHz)",
+    "y_axis": "Gain (dB)",
+    "points": [
+        {
+            "x": 10,
+            "y": -24.0
+        },
+        {
+            "x": 20,
+            "y": -12.0
+        },
+        {
+            "x": 30,
+            "y": 0.0
+        },
+        {
+            "x": 35,
+            "y": -6.0
+        },
+        {
+            "x": 40,
+            "y": -12.0
+        }
+    ]
+}

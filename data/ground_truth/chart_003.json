@@ -1,0 +1,52 @@
+{
+    "chart_id": "chart_003",
+    "chart_type": "line",
+    "title": "Global Temperature Anomaly",
+    "x_axis": {
+        "label": "Year",
+        "values": [
+            2016,
+            2017,
+            2018,
+            2019,
+            2020
+        ]
+    },
+    "y_axis": {
+        "label": "Anomaly (C)",
+        "values": [
+            -0.4,
+            0.2,
+            0.6,
+            0.9,
+            1.3
+        ]
+    },
+    "series": [
+        {
+            "name": "Temperature Anomaly",
+            "points": [
+                {
+                    "x": 2016,
+                    "y": -0.4
+                },
+                {
+                    "x": 2017,
+                    "y": 0.2
+                },
+                {
+                    "x": 2018,
+                    "y": 0.6
+                },
+                {
+                    "x": 2019,
+                    "y": 0.9
+                },
+                {
+                    "x": 2020,
+                    "y": 1.3
+                }
+            ]
+        }
+    ]
+}

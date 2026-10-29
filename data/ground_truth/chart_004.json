@@ -1,0 +1,52 @@
+{
+    "chart_id": "chart_004",
+    "chart_type": "line",
+    "title": "Enzyme Reaction Velocity",
+    "x_axis": {
+        "label": "Substrate Concentration (mM)",
+        "values": [
+            2,
+            4,
+            6,
+            8,
+            10
+        ]
+    },
+    "y_axis": {
+        "label": "Velocity (umol/min)",
+        "values": [
+            18.2,
+            31.5,
+            41.0,
+            48.2,
+            53.0
+        ]
+    },
+    "series": [
+        {
+            "name": "Reaction Velocity",
+            "points": [
+                {
+                    "x": 2,
+                    "y": 18.2
+                },
+                {
+                    "x": 4,
+                    "y": 31.5
+                },
+                {
+                    "x": 6,
+                    "y": 41.0
+                },
+                {
+                    "x": 8,
+                    "y": 48.2
+                },
+                {
+                    "x": 10,
+                    "y": 53.0
+                }
+            ]
+        }
+    ]
+}

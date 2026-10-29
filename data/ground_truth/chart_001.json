@@ -1,0 +1,52 @@
+{
+    "chart_id": "chart_001",
+    "chart_type": "line",
+    "title": "Model Accuracy Across Epochs",
+    "x_axis": {
+        "label": "Epoch",
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "y_axis": {
+        "label": "Accuracy (%)",
+        "values": [
+            72,
+            76,
+            81,
+            85,
+            89
+        ]
+    },
+    "series": [
+        {
+            "name": "Model A",
+            "points": [
+                {
+                    "x": 1,
+                    "y": 72
+                },
+                {
+                    "x": 2,
+                    "y": 76
+                },
+                {
+                    "x": 3,
+                    "y": 81
+                },
+                {
+                    "x": 4,
+                    "y": 85
+                },
+                {
+                    "x": 5,
+                    "y": 89
+                }
+            ]
+        }
+    ]
+}
